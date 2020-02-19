@@ -1,0 +1,21 @@
+[submodule "love-article-zuul-gateway"]
+	path = love-article-zuul-gateway
+	url = https://github.com/fedexu/love-article-zuul-gateway
+[submodule "love-article-zuul-angular-pwa"]
+	path = love-article-zuul-angular-pwa
+	url = https://github.com/fedexu/love-article-zuul-angular-pwa
+[submodule "love-article-favorites-service"]
+	path = love-article-favorites-service
+	url = https://github.com/fedexu/love-article-favorites-service
+[submodule "love-article-eureka-registry"]
+	path = love-article-eureka-registry
+	url = https://github.com/fedexu/love-article-eureka-registry
+[submodule "love-article-config"]
+	path = love-article-config
+	url = https://github.com/fedexu/love-article-config
+[submodule "love-article-articles-service"]
+	path = love-article-articles-service
+	url = https://github.com/fedexu/love-article-articles-service
+[submodule "angular-pwa"]
+	path = angular-pwa
+	url = https://github.com/fedexu/angular-pwa

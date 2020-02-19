@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.love.article</groupId>
+	<artifactId>love-article</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>love-article</name>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+		<java.version>1.8</java.version>
+		<npm.version>6.13.4</npm.version>
+		<node.version>v10.18.1</node.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<modules>
+		<module>love-article-config</module>
+		<module>love-article-eureka-registry</module>
+		<module>love-article-zuul-gateway</module>		
+		<module>love-article-zuul-angular-pwa</module>
+		<module>love-article-articles-service</module>
+		<module>love-article-favorites-service</module>
+		<!-- <module>auth-service</module> -->
+		<!-- <module>statistics-service</module> -->
+		<!-- <module>turbine-stream-service</module> -->
+		<!-- <module>monitoring</module> -->
+	</modules>
+
+</project>

@@ -1,0 +1,171 @@
+version: '3'
+services:
+#INFRASTRUCTURE SERVICES
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+      - $RABBIT_MQ_PORT:15672
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  config:
+    environment:
+      CONFIG_SERVICE_USER: $CONFIG_SERVICE_USER
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+      CONFIG_PORT: $CONFIG_PORT
+    image: love-article-config
+    restart: always
+    build: love-article-config
+    ports:
+      - $CONFIG_PORT:$CONFIG_PORT
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  eureka-registry:
+    environment:
+        CONFIG_SERVICE : $CONFIG_SERVICE
+        CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+        CONFIG_SERVICE_USER: $CONFIG_SERVICE_USER
+        CONFIG_PORT: $CONFIG_PORT
+        EUREKA_REGISTRY: $EUREKA_REGISTRY
+        EUREKA_REGISTRY_PORT: $EUREKA_REGISTRY_PORT
+    image: love-article-eureka-registry
+    restart: always
+    build: love-article-eureka-registry
+    ports:
+      - $EUREKA_REGISTRY_PORT:$EUREKA_REGISTRY_PORT
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+        
+  zuul-gateway:
+      environment:
+        CONFIG_SERVICE : $CONFIG_SERVICE
+        CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+        CONFIG_SERVICE_USER: $CONFIG_SERVICE_USER
+        CONFIG_PORT: $CONFIG_PORT
+        EUREKA_REGISTRY: $EUREKA_REGISTRY
+        EUREKA_REGISTRY_PORT: $EUREKA_REGISTRY_PORT
+        ZUUL_GATEWAY_TIMEOUT: $ZUUL_GATEWAY_TIMEOUT
+        ZUUL_GATEWAY_PORT: $ZUUL_GATEWAY_PORT
+        HYSTRIX_TIMEOUT: $HYSTRIX_TIMEOUT
+      image: love-article-zuul-gateway
+      restart: always
+      build: love-article-zuul-gateway
+      ports:
+        - $ZUUL_GATEWAY_PORT:$ZUUL_GATEWAY_PORT
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"          
+#ACTUAL APPLICATION
+#ANGULAR APP
+  zuul-angular-pwa:
+      environment:
+        CONFIG_SERVICE : $CONFIG_SERVICE
+        CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+        CONFIG_SERVICE_USER: $CONFIG_SERVICE_USER
+        CONFIG_PORT: $CONFIG_PORT
+        EUREKA_REGISTRY: $EUREKA_REGISTRY
+        EUREKA_REGISTRY_PORT: $EUREKA_REGISTRY_PORT
+        ZUUL_ANGULAR_PWA_PORT: $ZUUL_ANGULAR_PWA_PORT
+      image: love-article-zuul-angular-pwa
+      restart: always
+      build: love-article-zuul-angular-pwa
+      ports:
+        - $ZUUL_ANGULAR_PWA_PORT:$ZUUL_ANGULAR_PWA_PORT
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"
+
+#ARTICLES SERVICE
+  articles-service:
+      environment:
+        CONFIG_SERVICE : $CONFIG_SERVICE
+        CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+        CONFIG_SERVICE_USER: $CONFIG_SERVICE_USER
+        CONFIG_PORT: $CONFIG_PORT
+        EUREKA_REGISTRY: $EUREKA_REGISTRY
+        EUREKA_REGISTRY_PORT: $EUREKA_REGISTRY_PORT
+        ARTICLES_SERVICE_PASSWORD: $ARTICLES_SERVICE_PASSWORD
+        ARTICLES_PORT: $ARTICLES_PORT
+        DB_HOST: $ARTICLES_DB_HOST
+        DB_PORT: $POSTGRES_DB_PORT
+        DB_NAME: $POSTGRES_DB_NAME
+        DB_SCHEMA: $ARTICLES_DB_SCHEMA
+        DB_PASSWORD: $ARTICLES_DB_PASSWORD
+        DB_USER: $ARTICLES_DB_USER
+      image: love-article-articles-service
+      restart: always
+      build: love-article-articles-service
+      ports:
+        - $ARTICLES_PORT:$ARTICLES_PORT
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"
+          
+  articles-db:
+      environment:
+        POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+        POSTGRES_USER: $POSTGRES_USER
+        DB_PASSWORD: $ARTICLES_DB_PASSWORD
+        DB_USER: $ARTICLES_DB_USER
+        DB_NAME: $POSTGRES_DB_NAME
+        DB_SCHEMA: $ARTICLES_DB_SCHEMA
+      image: love-article-postgres
+      restart: always
+      build: love-article-articles-service/db
+      ports:
+        - $ARTICLES_DB_PORT:5432
+
+#FAVORITES SERVICE
+  favorites-service:
+      environment:
+        CONFIG_SERVICE : $CONFIG_SERVICE
+        CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+        CONFIG_SERVICE_USER: $CONFIG_SERVICE_USER
+        CONFIG_PORT: $CONFIG_PORT
+        EUREKA_REGISTRY: $EUREKA_REGISTRY
+        EUREKA_REGISTRY_PORT: $EUREKA_REGISTRY_PORT
+        FAVORITES_SERVICE_PASSWORD: $FAVORITES_SERVICE_PASSWORD
+        FAVORITES_PORT: $FAVORITES_PORT
+        DB_PASSWORD: $FAVORITES_DB_PASSWORD
+        DB_HOST: $FAVORITES_DB_HOST
+        DB_USER: $FAVORITES_DB_USER
+        DB_PORT: $POSTGRES_DB_PORT
+        DB_NAME: $POSTGRES_DB_NAME
+        DB_SCHEMA: $FAVORITES_DB_SCHEMA
+      image: love-article-favorites-service
+      restart: always
+      build: love-article-favorites-service
+      ports:
+        - $FAVORITES_PORT:$FAVORITES_PORT
+      logging:
+        options:
+          max-size: "10m"
+          max-file: "10"
+          
+  favorites-db:
+    environment:
+      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+      POSTGRES_USER: $POSTGRES_USER
+      DB_PASSWORD: $FAVORITES_DB_PASSWORD
+      DB_USER: $FAVORITES_DB_USER
+      DB_NAME: $POSTGRES_DB_NAME
+      DB_SCHEMA: $FAVORITES_DB_SCHEMA
+    image: love-favorites-postgres
+    restart: always
+    build: love-article-favorites-service/db
+    ports:
+      - $FAVORITES_DB_PORT:5432
+        
+        
+        
