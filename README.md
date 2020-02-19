@@ -57,6 +57,7 @@ Ensure that you have at least `4 Gb` RAM available by running it with Docker-com
 
 #### Before you start
 
+- Be sure to clone the project with the command: `git clone --recurse-submodules <url>`
 - Install Docker along with Docker Compose.
 - Build the project: `mvn clean package -DskipTests`
 
@@ -66,9 +67,17 @@ To run the app simply type `docker-compose up --build`
 All the images will be builded locally and runned. If you want to detach the process add -d in the command.
 
 #### Important endpoints
+
+Run locally with Eclipse/IntelliJ:
 - http://localhost:4000 - Gateway
 - http://localhost:7777 - Eureka Discovery Dashboard
 - http://localhost:15000 - RabbitMq (username/password: guest/guest)
+
+Run with docker-compose:
+- http://localhost:8080 - Gateway
+- http://localhost:8082 - Eureka Discovery Dashboard
+- http://localhost:8083 - RabbitMq (username/password: guest/guest)
+
 
 #### Notes
 If you see some error in the startup process, no worries. The Docker compose V3 have removed the `depends_on` option and the application are resilient to the fail startup.
