@@ -43,7 +43,6 @@
 		<module>love-article-zuul-angular-pwa</module>
 		<module>love-article-articles-service</module>
 		<module>love-article-favorites-service</module>
-		<!-- <module>auth-service</module> -->
 		<!-- <module>statistics-service</module> -->
 		<!-- <module>turbine-stream-service</module> -->
 		<!-- <module>monitoring</module> -->
