@@ -19,3 +19,6 @@
 [submodule "angular-pwa"]
 	path = angular-pwa
 	url = https://github.com/fedexu/angular-pwa
+[submodule "love-article-auth-jwt"]
+	path = love-article-auth-jwt
+	url = https://github.com/fedexu/love-article-auth-jwt.git
