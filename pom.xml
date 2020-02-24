@@ -38,14 +38,15 @@
 	
 	<modules>
 		<module>love-article-config</module>
+		<module>love-article-auth-jwt</module>
 		<module>love-article-eureka-registry</module>
 		<module>love-article-zuul-gateway</module>		
-		<module>love-article-zuul-angular-pwa</module>
 		<module>love-article-articles-service</module>
 		<module>love-article-favorites-service</module>
 		<!-- <module>statistics-service</module> -->
 		<!-- <module>turbine-stream-service</module> -->
 		<!-- <module>monitoring</module> -->
+		<module>love-article-zuul-angular-pwa</module>
 	</modules>
 
 </project>
