@@ -1,11 +1,22 @@
 version: '3'
 services:
 #INFRASTRUCTURE SERVICES
-  rabbitmq:
-    image: rabbitmq:3-management
+# not used for now, removed to save up memory
+  # rabbitmq:
+  #   image: rabbitmq:3-management
+  #   restart: always
+  #   ports:
+  #     - $RABBIT_MQ_PORT:15672
+  #   logging:
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "10"
+
+  zipkin-log:
+    image: openzipkin/zipkin
     restart: always
     ports:
-      - $RABBIT_MQ_PORT:15672
+      - 9411:9411
     logging:
       options:
         max-size: "10m"

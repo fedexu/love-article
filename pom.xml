@@ -22,6 +22,9 @@
 		<java.version>1.8</java.version>
 		<npm.version>6.13.4</npm.version>
 		<node.version>v10.18.1</node.version>
+		<swagger.version>2.6.1</swagger.version>
+		<jsonwebtoken.version>0.9.0</jsonwebtoken.version>
+		<fe.maven.plugin.version>1.7.6</fe.maven.plugin.version>
 	</properties>
 
 	<dependencyManagement>
