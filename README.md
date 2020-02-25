@@ -50,6 +50,11 @@ In this project there is some distributed system patterns implemented. <a target
 //TODO description or list of the tool included in the project
 
 
+## Security
+
+Advanced security is out of the scope for this POC (proof-of-concept) project. We use a simply JWT authentication implemented with filters on spring security level.
+To see more of security topic with spring cloud try to see <a target="_blank" rel="noopener noreferrer" href="http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_security">here</a>. 
+
 ## Local environment run
 
 This project use 9 Spring Boot application, 4 Database instances and RabbitMq.
@@ -78,6 +83,7 @@ Run with docker-compose:
 - http://localhost:8082 - Eureka Discovery Dashboard
 - http://localhost:8083 - RabbitMq (username/password: guest/guest)
 
+To use api with Postman or other tool remember to do a POST on `http://"gateway"/auth/login` with payload `{"username": "dummy", "password": "dummy"}` (or other pre-autorized user created in the Docker scripts), to retrieve a valid JWT toket. Otherwise the Gateway will reject any other request rether then the PWA application static files.
 
 #### Notes
 If you see some error in the startup process, no worries. The Docker compose V3 have removed the `depends_on` option and the application are resilient to the fail startup.
