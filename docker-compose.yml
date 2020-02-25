@@ -16,7 +16,7 @@ services:
     image: openzipkin/zipkin
     restart: always
     ports:
-      - 9411:9411
+      - $ZIPKIN_LOG_PORT:9411
     logging:
       options:
         max-size: "10m"
