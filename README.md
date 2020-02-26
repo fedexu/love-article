@@ -83,7 +83,7 @@ Run with docker-compose:
 - http://localhost:8082 - Eureka Discovery Dashboard
 - http://localhost:8083 - RabbitMq (username/password: guest/guest)
 
-To use api with Postman or other tool remember to do a POST on `http://"gateway"/auth/login` with payload `{"username": "dummy", "password": "dummy"}` (or other pre-autorized user created in the Docker scripts), to retrieve a valid JWT toket. Otherwise the Gateway will reject any other request rether then the PWA application static files.
+To use api with Postman or other tool remember to do a POST on `http://"gateway"/auth/login` with payload `{"username": "dummy", "password": "dummy"}` (or other pre-autorized user created in the Docker scripts), to retrieve a valid JWT toket. Otherwise the Gateway will reject any request except the PWA application static files.
 
 #### Notes
 If you see some error in the startup process, no worries. The Docker compose V3 have removed the `depends_on` option and the application are resilient to the fail startup.
