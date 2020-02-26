@@ -41,6 +41,7 @@ The data generated it's used to order articles list on the main window.
 //TODO API TABLE
 
 ## Infrastructure architecture
+
 In this project there is some distributed system patterns implemented. <a target="_blank" rel="noopener noreferrer" href="http://projects.spring.io/spring-cloud/">Spring cloud</a> enhance Spring Boot applications to implement those patterns and it's used in this project along with some Netflix OSS projects.
 
 <p align="center">
@@ -65,7 +66,7 @@ Zipkin is a distributed tracing system. It helps gather timing data needed to tr
 RabbitMQ is one of the most famous open source message broker.
 Why a message broker? Leave ad open door to a message broker service in your architecture help you to go to event-driven programming and solve many problem with this approach instead of REST calling between microservices (that is not a good things...)
 
-## Security
+### Security
 Advanced security is out of the scope for this POC (proof-of-concept) project. We use a simply JWT authentication implemented with filters on spring security level.
 To see more of security topic with spring cloud try to see <a target="_blank" rel="noopener noreferrer" href="http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_security">here</a>. 
 
@@ -75,18 +76,15 @@ This project use 9 Spring Boot application, 4 Database instances and RabbitMq.
 Ensure that you have at least `4 Gb` RAM available by running it with Docker-compose. A second options is to run the core services (Gateway, Registry, Config, Auth Service and Functional services ) manually.
 
 #### Before you start
-
 - Be sure to clone the project with the command: `git clone --recurse-submodules <url>`
 - Install Docker along with Docker Compose.
 - Build the project: `mvn clean package -DskipTests`
 
 #### Run the app
-
 To run the app simply type `docker-compose up --build`
 All the images will be builded locally and runned. If you want to detach the process add -d in the command.
 
 #### Important endpoints
-
 Run locally with Eclipse/IntelliJ:
 - http://localhost:4000 - Gateway
 - http://localhost:7777 - Eureka Discovery Dashboard
@@ -99,7 +97,8 @@ Run with docker-compose:
 
 To use api with Postman or other tool remember to do a POST on `http://"gateway"/auth/login` with payload `{"username": "dummy", "password": "dummy"}` (or other pre-autorized user created in the Docker scripts), to retrieve a valid JWT toket. Otherwise the Gateway will reject any request except the PWA application static files.
 
-#### Notes
+## Notes
+
 If you see some error in the startup process, no worries. The Docker compose V3 have removed the `depends_on` option and the application are resilient to the fail startup.
 
 Discovery Service take a while to register all the applications (default heartbeat is 30s). This service will be the first to start up but you need some time to see all the services register to it.
