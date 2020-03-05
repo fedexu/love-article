@@ -22,3 +22,6 @@
 [submodule "love-article-auth-jwt"]
 	path = love-article-auth-jwt
 	url = https://github.com/fedexu/love-article-auth-jwt.git
+[submodule "love-article-admin"]
+	path = love-article-admin
+	url = https://github.com/fedexu/love-article-admin.git
