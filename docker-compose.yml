@@ -12,15 +12,15 @@ services:
   #       max-size: "10m"
   #       max-file: "10"
 
-  zipkin-log:
-    image: openzipkin/zipkin
-    restart: always
-    ports:
-      - $ZIPKIN_LOG_PORT:9411
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "10"
+#  zipkin-log:
+#    image: openzipkin/zipkin
+#    restart: always
+#    ports:
+#      - $ZIPKIN_LOG_PORT:9411
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "10"
 
   config:
     environment:
@@ -52,6 +52,25 @@ services:
     build: love-article-eureka-registry
     ports:
       - $EUREKA_REGISTRY_PORT:$EUREKA_REGISTRY_PORT
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+        
+  admin:
+    environment:
+      CONFIG_SERVICE : $CONFIG_SERVICE
+      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
+      CONFIG_SERVICE_USER: $CONFIG_SERVICE_USER
+      CONFIG_PORT: $CONFIG_PORT
+      EUREKA_REGISTRY: $EUREKA_REGISTRY
+      EUREKA_REGISTRY_PORT: $EUREKA_REGISTRY_PORT
+      ADMIN_PORT: $ADMIN_PORT
+    image: love-article-admin
+    restart: always
+    build: love-article-admin
+    ports:
+      - $ADMIN_PORT:$ADMIN_PORT
     logging:
       options:
         max-size: "10m"
