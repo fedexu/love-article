@@ -21,7 +21,7 @@ This is a tutorial project, the purpose is to show one of the many possible impl
 Love Article is created with three core microservices. All of them are developed following the pattern Domain-Driven Design (DDD) and they are independently deployable applications.
 
 <p align="center">
-  <img width="868" alt="functional_schema" src="https://user-images.githubusercontent.com/22296699/76226250-e7c14c80-621d-11ea-800e-2eb42991afcc.png">
+  <img width="868" alt="functional_schema" src="https://user-images.githubusercontent.com/22296699/76226612-65855800-621e-11ea-82ce-4616a1715905.png">
 </p>
 
 #### Favorites service
@@ -45,7 +45,7 @@ The data generated it's used to order articles list on the main window.
 In this project there is some distributed system patterns implemented. <a target="_blank" rel="noopener noreferrer" href="http://projects.spring.io/spring-cloud/">Spring cloud</a> enhance Spring Boot applications to implement those patterns and it's used in this project along with some Netflix OSS projects.
 
 <p align="center">
-  <img width="963" alt="infrastructure_architecture" src="https://user-images.githubusercontent.com/22296699/76226333-01629400-621e-11ea-85d3-769f43b20062.png">
+  <img width="963" alt="infrastructure_architecture" src="https://user-images.githubusercontent.com/22296699/76226649-746c0a80-621e-11ea-931e-17979c08c389.png">
 </p>
 
 ### Spring Cloud Config Server [<a target="_blank" rel="noopener noreferrer" href="https://cloud.spring.io/spring-cloud-config/reference/html/">Documentation</a>]
