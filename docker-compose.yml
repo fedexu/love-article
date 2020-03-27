@@ -12,15 +12,15 @@ services:
   #       max-size: "10m"
   #       max-file: "10"
 
-#  zipkin-log:
-#    image: openzipkin/zipkin
-#    restart: always
-#    ports:
-#      - $ZIPKIN_LOG_PORT:9411
-#    logging:
-#      options:
-#        max-size: "10m"
-#        max-file: "10"
+  zipkin-log:
+    image: openzipkin/zipkin
+    restart: always
+    ports:
+      - $ZIPKIN_LOG_PORT:9411
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
 
   config:
     environment:
