@@ -35,7 +35,7 @@ It's the data service that contains all the articles of the site
 //TODO API TABLE
 
 #### Statistics service
-Performs calculations about the favorites articles of all the users and the "Hot topic" on the site. It work on the "tag" on the articels and the number of the favorites topic along with the creation date of the article itself. 
+Performs calculations about the favorites articles of all the users and the "Hot topic" on the site. It work on the "tag" on the articels and the number of the favorites topic along with the creation date of the article itself.
 The data generated it's used to order articles list on the main window.
 
 //TODO API TABLE
@@ -45,18 +45,18 @@ The data generated it's used to order articles list on the main window.
 In this project there is some distributed system patterns implemented. <a target="_blank" rel="noopener noreferrer" href="http://projects.spring.io/spring-cloud/">Spring cloud</a> enhance Spring Boot applications to implement those patterns and it's used in this project along with some Netflix OSS projects.
 
 <p align="center">
-  <img width="963" alt="infrastructure_architecture" src="https://user-images.githubusercontent.com/22296699/76226649-746c0a80-621e-11ea-931e-17979c08c389.png">
+  <img width="963" alt="infrastructure_architecture" src="https://user-images.githubusercontent.com/22296699/79488659-61690900-801a-11ea-95e1-bd6374291435.png">
 </p>
 
 ### Spring Cloud Config Server [<a target="_blank" rel="noopener noreferrer" href="https://cloud.spring.io/spring-cloud-config/reference/html/">Documentation</a>]
 Spring Cloud Config provides server-side and client-side support for externalized configuration in a distributed system. With the Config Server, you have a central place to manage external properties for applications across all environments.
 
 ### Eureka Server [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance">Documentation</a>]
-Eureka is a REST based service that is primarily used for locating services for the purpose of load balancing and failover of middle-tier servers. 
+Eureka is a REST based service that is primarily used for locating services for the purpose of load balancing and failover of middle-tier servers.
 The client also has a built-in load balancer that does basic round-robin load balancing.
 
 ### Zuul Gateway [<a target="_blank" rel="noopener noreferrer" href="https://github.com/Netflix/zuul/wiki">Documentation</a>]
-Zuul is the front door for all requests from devices and web sites to the backend services. 
+Zuul is the front door for all requests from devices and web sites to the backend services.
 Is built to enable dynamic routing, monitoring, resiliency and security.
 
 ### Zipkin [<a target="_blank" rel="noopener noreferrer" href="https://zipkin.io/">Documentation</a>]
@@ -68,7 +68,7 @@ Why a message broker? Leave ad open door to a message broker service in your arc
 
 ### Security
 Advanced security is out of the scope for this POC (proof-of-concept) project. We use a simply JWT authentication implemented with filters on spring security level.
-To see more of security topic with spring cloud try to see <a target="_blank" rel="noopener noreferrer" href="http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_security">here</a>. 
+To see more of security topic with spring cloud try to see <a target="_blank" rel="noopener noreferrer" href="http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_security">here</a>.
 
 ## Local environment run
 
@@ -106,5 +106,3 @@ Discovery Service take a while to register all the applications (default heartbe
 ## Help me to get the app famous!
 
 Love Article is open source and want to give to you the basics knowledge about cloud native application with Spring and java technologies. A star to this project will be appreciate!
-
-
