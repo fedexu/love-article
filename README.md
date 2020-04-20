@@ -45,7 +45,7 @@ The data generated it's used to order articles list on the main window.
 In this project there is some distributed system patterns implemented. <a target="_blank" rel="noopener noreferrer" href="http://projects.spring.io/spring-cloud/">Spring cloud</a> enhance Spring Boot applications to implement those patterns and it's used in this project along with some Netflix OSS projects.
 
 <p align="center">
-  <img width="963" alt="infrastructure_architecture" src="https://user-images.githubusercontent.com/22296699/79488659-61690900-801a-11ea-95e1-bd6374291435.png">
+  <img width="963" alt="infrastructure_architecture" src="https://user-images.githubusercontent.com/22296699/79771007-7a313180-832e-11ea-9637-a3f3b8305181.png">
 </p>
 
 ### Spring Cloud Config Server [<a target="_blank" rel="noopener noreferrer" href="https://cloud.spring.io/spring-cloud-config/reference/html/">Documentation</a>]
