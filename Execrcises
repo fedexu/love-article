@@ -1,0 +1,8 @@
+Those exercises have the goal to get practice with a microservice infrastructure 
+and understand the difference between asynchronous and an asynchronous connection in microservices context.
+
+Execrcises
+- Implements a CRUD functions that manage the favorites articles in the application, profiled!
+- Create Statistics service that give a list of articles ordered by favorites
+- Implements resilience4j rule to prevent error if some service is down
+- Refactor this infra-microservice comuncation with rabbit mq and see difference!
