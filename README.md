@@ -3,8 +3,7 @@
 <a target="_blank"><img src="https://spring.io/images/projects/spring-edf462fec682b9d48cf628eaf9e19521.svg" width="100" alt="Spring Logo" /></a>
 </p>
 
-
-[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/fedexu/love-article/blob/master/LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/fedexu/love-article/blob/master/LICENSE)
 [![sonar qube](https://sonarcloud.io/api/project_badges/measure?project=fedexu_love-article&metric=alert_status)](https://sonarcloud.io/dashboard?id=fedexu_love-article)
 
 # Love Article
