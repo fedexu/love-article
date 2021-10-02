@@ -34,7 +34,7 @@ It's the data service that contains all the articles of the site
 //TODO API TABLE
 
 #### Statistics service
-Performs calculations about the favorites articles of all the users and the "Hot topic" on the site. It work on the "tag" on the articels and the number of the favorites topic along with the creation date of the article itself.
+Performs calculations about the favorites articles of all the users and the "Hot topic" on the site. It works on the "tag" on the articles and the number of the favorites topic along with the creation date of the article itself.
 The data generated it's used to order articles list on the main window.
 
 //TODO API TABLE
@@ -81,7 +81,7 @@ Ensure that you have at least `4 Gb` RAM available by running it with Docker-com
 
 #### Run the app
 To run the app simply type `docker-compose up --build`
-All the images will be builded locally and runned. If you want to detach the process add -d in the command.
+All the images will be built locally and run. If you want to detach the process add -d in the command.
 
 #### Important endpoints
 Run locally with Eclipse/IntelliJ:
@@ -94,7 +94,7 @@ Run with docker-compose:
 - http://localhost:8082 - Eureka Discovery Dashboard
 - http://localhost:8083 - RabbitMq (username/password: guest/guest)
 
-To use api with Postman or other tool remember to do a POST on `http://"gateway"/auth/login` with payload `{"username": "dummy", "password": "dummy"}` (or other pre-autorized user created in the Docker scripts), to retrieve a valid JWT toket. Otherwise the Gateway will reject any request except the PWA application static files.
+To use api with Postman or other tool remember to do a POST on `http://"gateway"/auth/login` with payload `{"username": "dummy", "password": "dummy"}` (or other pre-autorized user created in the Docker scripts), to retrieve a valid JWT token. Otherwise the Gateway will reject any request except the PWA application static files.
 
 ## Notes
 
